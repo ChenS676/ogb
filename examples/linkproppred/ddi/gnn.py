@@ -229,6 +229,7 @@ def main():
 
     # We randomly pick some training samples that we want to evaluate on:
     torch.manual_seed(12345)
+    # TODO what is split vector
     idx = torch.randperm(split_edge['train']['edge'].size(0))
     idx = idx[:split_edge['valid']['edge'].size(0)]
     split_edge['eval_train'] = {'edge': split_edge['train']['edge'][idx]}

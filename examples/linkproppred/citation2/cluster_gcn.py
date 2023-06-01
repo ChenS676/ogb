@@ -172,7 +172,7 @@ def main():
     parser.add_argument('--num_layers', type=int, default=3)
     parser.add_argument('--hidden_channels', type=int, default=256)
     parser.add_argument('--dropout', type=float, default=0.0)
-    parser.add_argument('--batch_size', type=int, default=256)
+    parser.add_argument('--batch_size', type=int, default=2)
     parser.add_argument('--lr', type=float, default=0.001)
     parser.add_argument('--epochs', type=int, default=200)
     parser.add_argument('--eval_steps', type=int, default=10)
@@ -212,6 +212,7 @@ def main():
     logger = Logger(args.runs, args)
 
     for run in range(args.runs):
+        from IPython.embed import embed; embed()
         model.reset_parameters()
         predictor.reset_parameters()
         optimizer = torch.optim.Adam(

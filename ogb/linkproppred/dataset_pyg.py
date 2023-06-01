@@ -31,7 +31,7 @@ class PygLinkPropPredDataset(InMemoryDataset):
             self.original_root = root
             self.root = osp.join(root, self.dir_name)
             
-            master = pd.read_csv(os.path.join(os.path.dirname(__file__), 'master.csv'), index_col = 0)
+            master = pd.read_csv(os.path.join(os.path.dirname(__file__), 'master.csv'), index_col=0, keep_default_na=False)
             if not self.name in master:
                 error_mssg = 'Invalid dataset name {}.\n'.format(self.name)
                 error_mssg += 'Available datasets are as follows:\n'
@@ -144,9 +144,10 @@ class PygLinkPropPredDataset(InMemoryDataset):
 
 if __name__ == '__main__':
 
-    pyg_dataset = PygLinkPropPredDataset(name = 'ogbl-biokg')
+    pyg_dataset = PygLinkPropPredDataset(name = 'ogbl-citation2')
     split_edge = pyg_dataset.get_edge_split()
-    print(pyg_dataset[0])
+    print(split_edge['train'])
+    print(split_edge['test'])
     exit(-1)
 
     pyg_dataset = PygLinkPropPredDataset(name = 'ogbl-ddi')

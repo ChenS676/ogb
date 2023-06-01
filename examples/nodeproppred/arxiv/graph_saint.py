@@ -29,7 +29,7 @@ parser.add_argument('--num_steps', type=int, default=30)
 args = parser.parse_args()
 print(args)
 
-dataset = PygNodePropPredDataset(name='ogbn-mag')
+dataset = PygNodePropPredDataset(name='ogbn-arxiv')
 data = dataset[0]
 split_idx = dataset.get_idx_split()
 evaluator = Evaluator(name='ogbn-mag')

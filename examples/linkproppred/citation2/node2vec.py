@@ -18,7 +18,7 @@ def main():
     parser.add_argument('--walk_length', type=int, default=40)
     parser.add_argument('--context_size', type=int, default=20)
     parser.add_argument('--walks_per_node', type=int, default=10)
-    parser.add_argument('--batch_size', type=int, default=256)
+    parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--lr', type=float, default=0.01)
     parser.add_argument('--epochs', type=int, default=1)
     parser.add_argument('--log_steps', type=int, default=1)
